@@ -139,10 +139,10 @@ function checkConductor() {
   let areaInSqmm = dynamicInput;
   if (inputType === 'diameter' && inputUnit === 'inch') {
     const radius = dynamicInput / 2 * 25.4; // Convert inches to mm
-    areaInSqmm = Math.PI * radius * radius;
+    areaInSqmm = 3.14 * radius * radius; //Use 3.14 and not Math.PI
   } else if (inputType === 'diameter' && inputUnit === 'mm') {
     const radius = dynamicInput / 2;
-    areaInSqmm = Math.PI * radius * radius;
+    areaInSqmm = 3.14 * radius * radius; //Use 3.14 and not Math.PI
   } else if (inputType === 'area' && inputUnit === 'sqinch') {
     areaInSqmm = dynamicInput * 645.16; // Convert inch² to mm²
   } else if (inputType === 'area' && inputUnit === 'sqmm') {
