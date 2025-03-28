@@ -160,7 +160,7 @@ function checkConductor() {
   //const matchingArea = parseFloat(matchingEntry.area);
   //const nearestrvalue = filteredData.sort((a, b) => parseFloat(a.area) - parseFloat(b.area)).find(entry => parseFloat(entry.area) >= areaInSqmm);
   
-  //console.log(`Material: ${material}, area: ${matchingEntry.area}, resistancemax: ${matchingEntry.value}, Type: ${type}, Area: ${areaInSqmm}, Length: ${lengthInKm}, Resistance: ${r20PerKm.toPrecision(4)}`);
+  console.log(`Material: ${material}, area_json: ${matchingEntry.area}, resistancemax_json: ${matchingEntry.value}, Type: ${type}, Area: ${areaInSqmm}, Length: ${lengthInKm}, Resistance: ${r20PerKm.toPrecision(4)}`);
 
   if (matchingEntry) {
     const maxResistance = parseFloat(matchingEntry.value);
