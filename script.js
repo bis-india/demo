@@ -5,8 +5,8 @@ const jsonData = [
 
 document.getElementById('material8130').addEventListener('change', () =>{calculateR20();calculateR20PerKm();});
 document.getElementById('type8130').addEventListener('change', () =>{calculateR20();calculateR20PerKm();});
-document.getElementById('temperature').addEventListener('input', () =>{calculateR20();calculateR20PerKm();});
-document.getElementById('tempUnit').addEventListener('change', () =>{calculateR20();calculateR20PerKm();});
+document.getElementById('temperature8130').addEventListener('input', () =>{calculateR20();calculateR20PerKm();});
+document.getElementById('tempUnit8130').addEventListener('change', () =>{calculateR20();calculateR20PerKm();});
 document.getElementById('resistance').addEventListener('input', () =>{calculateR20();calculateR20PerKm();});
 document.getElementById('resistanceUnit').addEventListener('change', () =>{calculateR20();calculateR20PerKm();});
 document.getElementById('length').addEventListener('input', () =>{calculateR20();calculateR20PerKm();});
@@ -15,19 +15,19 @@ document.getElementById('diameter').addEventListener('input', () =>{calculateR20
 document.getElementById('diameterUnit').addEventListener('change', () =>{calculateR20();calculateR20PerKm();});
 
 function calculateR20() {
-  const temperature = parseFloat(document.getElementById('temperature').value);
+  const temperature8130 = parseFloat(document.getElementById('temperature8130').value);
   const resistance = parseFloat(document.getElementById('resistance').value);
   const resultElement = document.getElementById('r20result1');
-  const tempUnit = document.getElementById('tempUnit').value;
+  const tempUnit8130 = document.getElementById('tempUnit8130').value;
   const resistanceUnit = document.getElementById('resistanceUnit').value;
 
-  if (isNaN(temperature) || isNaN(resistance)) {
+  if (isNaN(temperature8130) || isNaN(resistance)) {
     resultElement.textContent = '';
     return;
   }
 
   // Convert to Celsius if temperature is in Fahrenheit
-  const tempCelsius = tempUnit === 'F' ? (temperature - 32) * 5 / 9 : temperature;
+  const tempCelsius = tempUnit8130 === 'F' ? (temperature8130 - 32) * 5 / 9 : temperature8130;
 
   // Calculate resistance at 20°C
   const resistanceAt20 = resistance / (1 + 0.004 * (tempCelsius - 20));
@@ -77,9 +77,9 @@ function calculateR20PerKm() {
   }
 
   // Calculate R20 in Ohm/km using resistanceAt20
-  const temperature = parseFloat(document.getElementById('temperature').value);
-  const tempUnit = document.getElementById('tempUnit').value;
-  const tempCelsius = tempUnit === 'F' ? (temperature - 32) * 5 / 9 : temperature;
+  const temperature8130 = parseFloat(document.getElementById('temperature8130').value);
+  const tempUnit8130 = document.getElementById('tempUnit8130').value;
+  const tempCelsius = tempUnit8130 === 'F' ? (temperature8130 - 32) * 5 / 9 : temperature8130;
   const resistanceAt20 = resistanceInOhms / (1 + 0.004 * (tempCelsius - 20));
 
   const r20PerKm = resistanceAt20 / lengthInKm;
@@ -130,9 +130,9 @@ function checkConductor() {
   }
 
   // Calculate R20 in Ohm/km using resistanceAt20
-  const temperature = parseFloat(document.getElementById('temperature').value);
-  const tempUnit = document.getElementById('tempUnit').value;
-  const tempCelsius = tempUnit === 'F' ? (temperature - 32) * 5 / 9 : temperature;
+  const temperature8130 = parseFloat(document.getElementById('temperature8130').value);
+  const tempUnit8130 = document.getElementById('tempUnit8130').value;
+  const tempCelsius = tempUnit8130 === 'F' ? (temperature8130 - 32) * 5 / 9 : temperature8130;
   const resistanceAt20 = resistanceInOhms / (1 + 0.004 * (tempCelsius - 20));
 
   const r20PerKm = resistanceAt20 / lengthInKm;  
