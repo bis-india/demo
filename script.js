@@ -17,7 +17,7 @@ document.getElementById('diameterUnit').addEventListener('change', () =>{calcula
 function calculateR20() {
   const temperature8130 = parseFloat(document.getElementById('temperature8130').value);
   const resistance8130 = parseFloat(document.getElementById('resistance8130').value);
-  const resultElement = document.getElementById('r20result1');
+  const resultElement = document.getElementById('r20result18130');
   const tempUnit8130 = document.getElementById('tempUnit8130').value;
   const resistanceUnit8130 = document.getElementById('resistanceUnit8130').value;
 
