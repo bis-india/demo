@@ -7,8 +7,8 @@ document.getElementById('material8130').addEventListener('change', () =>{calcula
 document.getElementById('type8130').addEventListener('change', () =>{calculateR20();calculateR20PerKm();});
 document.getElementById('temperature8130').addEventListener('input', () =>{calculateR20();calculateR20PerKm();});
 document.getElementById('tempUnit8130').addEventListener('change', () =>{calculateR20();calculateR20PerKm();});
-document.getElementById('resistance').addEventListener('input', () =>{calculateR20();calculateR20PerKm();});
-document.getElementById('resistanceUnit').addEventListener('change', () =>{calculateR20();calculateR20PerKm();});
+document.getElementById('resistance8130').addEventListener('input', () =>{calculateR20();calculateR20PerKm();});
+document.getElementById('resistanceUnit8130').addEventListener('change', () =>{calculateR20();calculateR20PerKm();});
 document.getElementById('length').addEventListener('input', () =>{calculateR20();calculateR20PerKm();});
 document.getElementById('lengthUnit').addEventListener('change', () =>{calculateR20();calculateR20PerKm();});
 document.getElementById('diameter').addEventListener('input', () =>{calculateR20();calculateR20PerKm();});
@@ -16,12 +16,12 @@ document.getElementById('diameterUnit').addEventListener('change', () =>{calcula
 
 function calculateR20() {
   const temperature8130 = parseFloat(document.getElementById('temperature8130').value);
-  const resistance = parseFloat(document.getElementById('resistance').value);
+  const resistance8130 = parseFloat(document.getElementById('resistance8130').value);
   const resultElement = document.getElementById('r20result1');
   const tempUnit8130 = document.getElementById('tempUnit8130').value;
-  const resistanceUnit = document.getElementById('resistanceUnit').value;
+  const resistanceUnit8130 = document.getElementById('resistanceUnit8130').value;
 
-  if (isNaN(temperature8130) || isNaN(resistance)) {
+  if (isNaN(temperature8130) || isNaN(resistance8130)) {
     resultElement.textContent = '';
     return;
   }
@@ -30,37 +30,37 @@ function calculateR20() {
   const tempCelsius = tempUnit8130 === 'F' ? (temperature8130 - 32) * 5 / 9 : temperature8130;
 
   // Calculate resistance at 20°C
-  const resistanceAt20 = resistance / (1 + 0.004 * (tempCelsius - 20));
+  const resistanceAt208130 = resistance8130 / (1 + 0.004 * (tempCelsius - 20));
 
-  resultElement.textContent = `Resistance at 20°C: ${resistanceAt20.toFixed(4)} ${resistanceUnit}`;
+  resultElement.textContent = `Resistance at 20°C: ${resistanceAt208130.toFixed(4)} ${resistanceUnit8130}`;
 }
 
 function calculateR20PerKm() {
-  const resistance = parseFloat(document.getElementById('resistance').value);
+  const resistance8130 = parseFloat(document.getElementById('resistance8130').value);
   const length = parseFloat(document.getElementById('length').value);
   const resultElement = document.getElementById('r20result2');
-  const resistanceUnit = document.getElementById('resistanceUnit').value;
+  const resistanceUnit8130 = document.getElementById('resistanceUnit8130').value;
   const lengthUnit = document.getElementById('lengthUnit').value;
 
-  if (isNaN(resistance) || isNaN(length)) {
+  if (isNaN(resistance8130) || isNaN(length)) {
     resultElement.textContent = '';
     return;
   }
 
   // Convert resistance to Ohms
-  let resistanceInOhms;
-  switch (resistanceUnit) {
+  let resistanceInOhms8130;
+  switch (resistanceUnit8130) {
     case 'Micro Ohm':
-      resistanceInOhms = resistance / 1e6;
+      resistanceInOhms8130 = resistance8130 / 1e6;
       break;
     case 'Milli Ohm':
-      resistanceInOhms = resistance / 1e3;
+      resistanceInOhms8130 = resistance8130 / 1e3;
       break;
     case 'Killo Ohm':
-      resistanceInOhms = resistance * 1e3;
+      resistanceInOhms8130 = resistance8130 * 1e3;
       break;
     default:
-      resistanceInOhms = resistance;
+      resistanceInOhms8130 = resistance8130;
   }
 
   // Convert length to Km
@@ -80,9 +80,9 @@ function calculateR20PerKm() {
   const temperature8130 = parseFloat(document.getElementById('temperature8130').value);
   const tempUnit8130 = document.getElementById('tempUnit8130').value;
   const tempCelsius = tempUnit8130 === 'F' ? (temperature8130 - 32) * 5 / 9 : temperature8130;
-  const resistanceAt20 = resistanceInOhms / (1 + 0.004 * (tempCelsius - 20));
+  const resistanceAt208130 = resistanceInOhms8130 / (1 + 0.004 * (tempCelsius - 20));
 
-  const r20PerKm = resistanceAt20 / lengthInKm;
+  const r20PerKm = resistanceAt208130 / lengthInKm;
 
   resultElement.textContent = `R20: ${r20PerKm.toFixed(4)} Ohm/km`;
 }
@@ -94,26 +94,26 @@ function checkConductor() {
   const inputType = document.getElementById('inputType').value;
   const dynamicInput = parseFloat(document.getElementById('dynamicInput').value);
   const inputUnit = document.getElementById('inputUnit').value;
-  const resistance = parseFloat(document.getElementById('resistance').value);
-  const resistanceUnit = document.getElementById('resistanceUnit').value;
+  const resistance8130 = parseFloat(document.getElementById('resistance8130').value);
+  const resistanceUnit8130 = document.getElementById('resistanceUnit8130').value;
   const length = parseFloat(document.getElementById('length').value);
   const lengthUnit = document.getElementById('lengthUnit').value;
   
   //console.log('Inputs fetched:', { material, type, inputType, dynamicInput, inputUnit, resistance, resistanceUnit });
   // Convert resistance to Ohms
-  let resistanceInOhms;
-  switch (resistanceUnit) {
+  let resistanceInOhms8130;
+  switch (resistanceUnit8130) {
     case 'Micro Ohm':
-      resistanceInOhms = resistance / 1e6;
+      resistanceInOhms8130 = resistance8130 / 1e6;
       break;
     case 'Milli Ohm':
-      resistanceInOhms = resistance / 1e3;
+      resistanceInOhms8130 = resistance8130 / 1e3;
       break;
     case 'Killo Ohm':
-      resistanceInOhms = resistance * 1e3;
+      resistanceInOhms8130 = resistance8130 * 1e3;
       break;
     default:
-      resistanceInOhms = resistance;
+      resistanceInOhms8130 = resistance8130;
   }
 
   // Convert length to Km
@@ -133,9 +133,9 @@ function checkConductor() {
   const temperature8130 = parseFloat(document.getElementById('temperature8130').value);
   const tempUnit8130 = document.getElementById('tempUnit8130').value;
   const tempCelsius = tempUnit8130 === 'F' ? (temperature8130 - 32) * 5 / 9 : temperature8130;
-  const resistanceAt20 = resistanceInOhms / (1 + 0.004 * (tempCelsius - 20));
+  const resistanceAt208130 = resistanceInOhms8130 / (1 + 0.004 * (tempCelsius - 20));
 
-  const r20PerKm = resistanceAt20 / lengthInKm;  
+  const r20PerKm = resistanceAt208130 / lengthInKm;  
   
   // Convert input to mm² if necessary
   let areaInSqmm = dynamicInput;
@@ -165,15 +165,15 @@ function checkConductor() {
   console.log(`Material8130: ${material8130}, area_json: ${matchingEntry.area}, resistancemax_json: ${matchingEntry.value}, Type8130: ${type8130}, Area: ${areaInSqmm}, Length: ${lengthInKm}, Resistance: ${r20PerKm.toPrecision(4)}`);
 
   if (matchingEntry) {
-    const maxResistance = parseFloat(matchingEntry.value);
-    console.log(`rinohm: ${r20PerKm}, rmax: ${maxResistance}`);
+    const maxResistance8130 = parseFloat(matchingEntry.value);
+    console.log(`rinohm: ${r20PerKm}, rmax: ${maxResistance8130}`);
 
     if (r20PerKm <= matchingEntry.value) {
-      document.getElementById('r20result3').textContent = `Pass - ${r20PerKm.toFixed(4)} ohm/km is lower than ${maxResistance.toFixed(4)} ohm/km for ${matchingEntry.area} mm² as per IS 8130.`;
+      document.getElementById('r20result3').textContent = `Pass - ${r20PerKm.toFixed(4)} ohm/km is lower than ${maxResistance8130.toFixed(4)} ohm/km for ${matchingEntry.area} mm² as per IS 8130.`;
       document.getElementById('r20result3').style.color = '#25bc00';
       console.log(`Pass`);
     } else {
-      document.getElementById('r20result3').textContent = `Fail - ${r20PerKm.toFixed(4)} ohm/km is higher than ${maxResistance.toFixed(4)} ohm/km for ${matchingEntry.area} mm² as per IS 8130.`;
+      document.getElementById('r20result3').textContent = `Fail - ${r20PerKm.toFixed(4)} ohm/km is higher than ${maxResistance8130.toFixed(4)} ohm/km for ${matchingEntry.area} mm² as per IS 8130.`;
       document.getElementById('r20result3').style.color = 'red';
       console.log(`Fail`);
     }
