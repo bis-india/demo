@@ -336,7 +336,7 @@ function checkConductor() {
   //const matchingArea = parseFloat(matchingEntry.area);
   //const nearestrvalue = filteredData.sort((a, b) => parseFloat(a.area) - parseFloat(b.area)).find(entry => parseFloat(entry.area) >= areaInSqmm);
   
-  console.log(`Material8130: ${material8130}, area_json: ${matchingEntry.area}, resistancemax_json: ${matchingEntry.value}, Type8130: ${type8130}, Area: ${areaInSqmm}, Length8130: ${lengthInKm8130}, Resistance: ${r20PerKm.toPrecision(4)}`);
+  //console.log(`Material8130: ${material8130}, area_json: ${matchingEntry.area}, resistancemax_json: ${matchingEntry.value}, Type8130: ${type8130}, Area: ${areaInSqmm}, Length8130: ${lengthInKm8130}, Resistance: ${r20PerKm.toPrecision(4)}`);
 
   if (matchingEntry) {
     const maxResistance8130 = parseFloat(matchingEntry.value);
@@ -353,7 +353,7 @@ function checkConductor() {
     }
   } else {
     document.getElementById('r20result3').textContent = `No matching data found in IS 8130.`;
-    document.getElementById('r20result3').style.color = 'black';
+    document.getElementById('r20result3').style.color = '#8e8e8e';
   }
 }
 
