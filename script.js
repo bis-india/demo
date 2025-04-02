@@ -328,8 +328,11 @@ function checkConductor() {
   //const result = jsonData.find(entry => entry.material === material && entry.type === type && parseFloat(entry.area) === parseFloat(areaInSqmm));
   // Find matching or next higher data from JSON
   const filteredData = jsonData8130.filter(entry => entry.material8130 === material8130 && entry.type8130 === type8130);
+  console.log('a':', filteredData);
   const sortedData = filteredData.sort((a, b) => parseFloat(a.area) - parseFloat(b.area));
+  console.log('b':', sortedData);
   const matchingEntry = sortedData.find(entry => parseFloat(entry.area) >= areaInSqmm);
+  console.log('c':', matchingEntry);
   //const matchingArea = parseFloat(matchingEntry.area);
   //const nearestrvalue = filteredData.sort((a, b) => parseFloat(a.area) - parseFloat(b.area)).find(entry => parseFloat(entry.area) >= areaInSqmm);
   
